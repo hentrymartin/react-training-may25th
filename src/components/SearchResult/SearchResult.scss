@@ -1,0 +1,15 @@
+.no-content {
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.search-result {
+  .location {
+    span {
+      margin-right: 10px;
+      &.label {
+        font-weight: 500;
+      }
+    }
+  }
+}

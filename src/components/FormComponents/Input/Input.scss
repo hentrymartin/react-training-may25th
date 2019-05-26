@@ -1,0 +1,19 @@
+.input-wrapper {
+  width: 100%;
+  position: relative;
+  input {
+    width: 100%;
+    min-height: 40px;
+    border-radius: 3px;
+    border: 1px solid #5d5d5d;
+    padding-left: 21px;
+  }
+  img {
+    position: absolute;
+    height: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
