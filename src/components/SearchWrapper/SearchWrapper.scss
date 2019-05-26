@@ -1,4 +1,24 @@
 .search-wrapper {
   max-width: 800px;
   margin: 100px auto 0 auto;
+  .action-wrapper {
+    display: flex;
+    align-items: center;
+    .button-wrapper {
+      margin-left: 10px;
+      min-width: 150px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      button {
+        padding: 8px 12px;
+        background-color: #ed245c;
+        color: white;
+        font-size: 15px;
+        text-transform: uppercase;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
 }

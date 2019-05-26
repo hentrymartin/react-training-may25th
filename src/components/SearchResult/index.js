@@ -2,29 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SearchResult.scss';
 
-const SearchResult = props => {
-  console.log(props.searchedResult);
-
-  if (!props.searchedResult) {
-    return <div className="no-content">Data is not available</div>;
+class SearchResult extends React.Component {
+  componentWillReceiveProps(prevProps, nextProps) {
+    console.log(prevProps, nextProps, 'component recieved new props');
   }
-  return (
-    <div className="search-result">
-      <h3>{props.searchedResult.name}</h3>
 
-      <div className="location">
-        <div className="latitude">
-          <span className="label">Latitude</span>
-          <span>{props.searchedResult.coord && props.searchedResult.coord.lat}</span>
-        </div>
-        <div className="longitude">
-          <span className="label">Longitude</span>
-          <span>{props.searchedResult.coord && props.searchedResult.coord.lon}</span>
+  componentWillUnmount() {
+    console.log('component unmounted');
+  }
+
+  render() {
+    const { props } = this;
+    const { searchedResult } = props;
+    if (!searchedResult) {
+      return <div className="no-content">Data is not available</div>;
+    }
+    return (
+      <div className="search-result">
+        <h3>{searchedResult.name}</h3>
+
+        <div className="location">
+          <div className="latitude">
+            <span className="label">Latitude</span>
+            <span>{searchedResult.coord && searchedResult.coord.lat}</span>
+          </div>
+          <div className="longitude">
+            <span className="label">Longitude</span>
+            <span>{searchedResult.coord && searchedResult.coord.lon}</span>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 SearchResult.defaultProps = {
   searchedResult: null,

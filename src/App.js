@@ -1,5 +1,4 @@
 import React from 'react';
-import Input from './components/FormComponents/Input/Input';
 import './App.css';
 import Header from './components/Header';
 import SearchWrapper from './components/SearchWrapper';

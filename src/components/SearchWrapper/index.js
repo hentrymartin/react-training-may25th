@@ -2,15 +2,28 @@ import React from 'react';
 import SearchResult from '../SearchResult';
 import Input from '../FormComponents/Input/Input';
 import './SearchWrapper.scss';
+import Button from '../FormComponents/Button';
 
 class SearchWrapper extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      city: '',
+      city: 'Bengaluru',
       searchedResult: null,
     };
+  }
+
+  componentWillMount() {
+    console.log('will mount');
+  }
+
+  componentDidMount() {
+    this.onCitySearch();
+  }
+
+  componentDidUpdate() {
+    console.log('component updated');
   }
 
   onCityChange = e => {
@@ -30,11 +43,22 @@ class SearchWrapper extends React.Component {
       });
   };
 
+  onClearResult = () => {
+    this.setState({
+      searchedResult: null,
+      city: '',
+    });
+  };
+
   render() {
     return (
       <div className="search-wrapper">
-        <Input value={this.state.city} onChange={this.onCityChange} onSearch={this.onCitySearch} />
-        <SearchResult searchedResult={this.state.searchedResult} />
+        <div className="action-wrapper">
+          <Input value={this.state.city} onChange={this.onCityChange} onSearch={this.onCitySearch} />
+          <Button label="Clear Result" onClick={this.onClearResult} />
+        </div>
+
+        {this.state.searchedResult && <SearchResult searchedResult={this.state.searchedResult} />}
       </div>
     );
   }

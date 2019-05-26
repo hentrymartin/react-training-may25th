@@ -6,7 +6,7 @@ import './Input.scss';
 const Input = props => {
   return (
     <div className="input-wrapper">
-      <input value={props.value} placeholder={props.placeholder} onChange={props.onChange} />
+      <input autoFocus value={props.value} placeholder={props.placeholder} onChange={props.onChange} />
       <img src={SEARCH_ICON} alt="Search Icon" onClick={props.onSearch} />
     </div>
   );

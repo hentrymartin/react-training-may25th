@@ -1,19 +1,25 @@
 .input-wrapper {
   width: 100%;
   position: relative;
+  height: 100%;
   input {
     width: 100%;
     min-height: 40px;
     border-radius: 3px;
     border: 1px solid #5d5d5d;
     padding-left: 21px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    outline: none;
   }
   img {
     position: absolute;
     height: 20px;
-    right: 0;
+    right: 1px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    padding: 8px;
+    background: white;
   }
 }
