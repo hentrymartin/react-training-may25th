@@ -1,0 +1,22 @@
+.selected-wrapper {
+  display: flex;
+  flex: 1;
+  position: relative;
+  .drop-down {
+    border: 1px solid grey;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    .drop-down-item {
+      padding: 4px;
+      transition: background 0.5s, color 0.5s;
+      cursor: pointer;
+      background: white;
+      &:hover {
+        background: orange;
+        color: white;
+      }
+    }
+  }
+}

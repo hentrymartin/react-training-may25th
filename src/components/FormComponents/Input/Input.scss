@@ -2,6 +2,13 @@
   width: 100%;
   position: relative;
   height: 100%;
+
+  &.error {
+    input {
+      border: 1px solid red;
+    }
+  }
+
   input {
     width: 100%;
     min-height: 40px;
